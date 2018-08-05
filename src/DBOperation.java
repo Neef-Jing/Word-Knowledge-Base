@@ -61,6 +61,7 @@ public class DBOperation {
 		return success;
 	}
 	public boolean InsertTranslation (String word, String translation) {
+		//Insert word and translation.
 		boolean success = false;
 		try {
 			statement.executeUpdate(
@@ -78,6 +79,7 @@ public class DBOperation {
 		return success;
 	}
 	public boolean ChangeRemembered (String word) {
+		//Change the status of a word.
 		boolean success = false;
 		try {
 			statement.executeUpdate(
@@ -93,6 +95,7 @@ public class DBOperation {
 		return success;
 	}
 	public boolean InsertBook (String book, String words) throws SQLiteException {
+		//Insert a book and words of the book.
 		boolean success = false;
 		try {
 			statement.executeUpdate(
@@ -109,18 +112,23 @@ public class DBOperation {
 		return success;
 	}
 	public int GetTotalCount () {
+		//Return the number of total words in the database.
 		return totalCount;
 	}
 	public int GetTotalBook () {
+		//Return the number of the books in the database.
 		return totalBook;
 	}
 	public int GetTotalDict () {
+		//Return the number of translated words.
 		return totalDict;
 	}
 	public int GetTotalRemembered () {
+		//Return the number of remembered words.
 		return totalRemembered;
 	}
 	public String GetTranslation (String word) {
+		//Get the translation of a word and store in the database.
 		String translation;
 		try {
 			translation = statement.executeQuery("SELECT Translation FROM Words WHERE Word = '" + word + "' AND Translation IS NOT '--NULL--';").getString("Translation");
@@ -132,6 +140,7 @@ public class DBOperation {
 		return translation;
 	}
 	public boolean WordExist (String word) {
+		//Check the word if it is in the database.
 		boolean exist = false;
 		try {
 			statement.executeQuery("SELECT Word FROM Words WHERE Word = '" + word + "';").getString("Word");
@@ -143,6 +152,7 @@ public class DBOperation {
 		return exist;
 	}
 	public boolean BookExist (String book) {
+		//Check the book if it is in the database.
 		boolean exist = false;
 		try {
 			statement.executeQuery("SELECT BookName FROM Book WHERE BookName = '" + book + "';").getString("BookName");
@@ -154,7 +164,7 @@ public class DBOperation {
 		return exist;
 	}	
 	public boolean CheckWordRemembered (String word) {
-		//Check A Word Is Remembered
+		//Check a word if it is remembered.
 		boolean remembered = false;
 		try {
 			statement.executeQuery("SELECT Word FROM Words WHERE Word = '" + word + "' AND Status = 1;").getString("Word");
@@ -166,6 +176,7 @@ public class DBOperation {
 		return remembered;
 	}
 	public String GetWordNotRemembered (int resultCount)[] {
+		//Get the list of words not remembered.
 		List<String> wordList = new ArrayList<>();
 		try {
 			ResultSet list = statement.executeQuery("SELECT Word FROM Words WHERE Translation IS NOT '--NULL--' AND Status = 0 LIMIT " + resultCount + ";");
@@ -181,6 +192,7 @@ public class DBOperation {
 		}
 	}
 	public String GetNoTranslation(int resultCount)[] {
+		//Get the list of words not translated.
 		List<String> wordList = new ArrayList<>();
 		try {
 			ResultSet list = statement.executeQuery("SELECT Word FROM Words WHERE Translation IS '--NULL--' LIMIT " + resultCount + ";");
@@ -196,7 +208,7 @@ public class DBOperation {
 		}
 	}
 	public String GetNoDict(int resultCount)[] {
-		//Return Words No Translations In The Web
+		//Return the list of words which are no translations in the website. 
 		List<String> wordList = new ArrayList<>();
 		try {
 			ResultSet list = statement.executeQuery("SELECT Word FROM Words WHERE Translation IS '--NOT-GET-TRANSLATED--' LIMIT " + resultCount + ";");
@@ -212,6 +224,7 @@ public class DBOperation {
 		}
 	}
 	public String GetBookWord(String book)[] {
+		//Return the list of words in a book.
 		try {
 			String words = statement.executeQuery("SELECT Words FROM Book WHERE BookName = '" + book + "';").getString("Words");
 			List<String> wordList = new ArrayList<>();
@@ -231,6 +244,7 @@ public class DBOperation {
 		}
 	}
 	public String GetBookNames(int resultCount)[] {
+		//Get the list of books in the database.
 		List<String> bookList = new ArrayList<>();
 		try {
 			ResultSet list = statement.executeQuery("SELECT BookName FROM Book LIMIT " + resultCount + ";");
