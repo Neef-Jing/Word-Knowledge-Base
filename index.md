@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+# Word Knowledge Base
 
-You can use the [editor on GitHub](https://github.com/Neef-Jing/Word-Knowledge-Base/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Referenced Classes
+commons-fileupload-1.3.3.jar
+commons-io-2.6.jar
+jsoup-1.11.3.jar
+sqlite-jdbc-3.23.1.jar
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Purpose
+It is such a bore to look over the dictionary while reading a book, so I just need to remember the words before reading.
 
-### Markdown
+## Todo
+1. Generate words from books(just .txt file).
+2. From http://dictionary.cambridge.org(Thanks) to get the translations, English to Chinese.
+3. Remember the words.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Neef-Jing/Word-Knowledge-Base/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
