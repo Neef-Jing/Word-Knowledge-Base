@@ -1,8 +1,8 @@
 # Word Knowledge Base
 
 ## Technology
-> Java
-> Servlet
+- Java
+- Servlet
 
 ## Referenced Classes
 commons-fileupload-1.3.3.jar
