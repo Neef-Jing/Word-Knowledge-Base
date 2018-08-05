@@ -1,3 +1,4 @@
+/*Some datatabse operations.*/
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -16,6 +17,7 @@ public class DBOperation {
 	int totalDict;
 	int totalRemembered;
 	public DBOperation (String dbname) {
+		//Connect Database and update some numbers.
 		databaseName = dbname;
 		try {
 	    	Class.forName("org.sqlite.JDBC");
@@ -40,6 +42,7 @@ public class DBOperation {
 	    }
 	}
 	public boolean InsertWord (String word) {
+		//Insert a word to the database.
 		boolean success = false;
 		try {
 			statement.executeUpdate(

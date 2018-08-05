@@ -1,4 +1,9 @@
-
+/*First page of the webserver. It dose this: 
+ * - Displays total words in the database.
+ * - Displays translated words and the link to translate.
+ * - Displays remembered words and the link to remember word.
+ * - Displays generated books in the database.
+ * - Upload books to generate words.*/
 
 import java.io.IOException;
 import java.io.PrintWriter;
